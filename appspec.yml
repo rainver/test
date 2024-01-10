@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+  - source: ./
+    destination: /usr/local/test
+hooks:
+  BeforeInstall:
+    - location: run.sh
+      timeout: 180
+  AfterInstall:
+    - location: run.sh
+      timeout: 180
+  ApplicationStart:
+    - location: run.sh
+      timeout: 300
+  ValidateService:
+    - location: run.sh
+      timeout: 300
